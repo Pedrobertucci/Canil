@@ -42,7 +42,14 @@ public class Main {
                             break;
                         }
                         case 2:{
-                            // falta aqui poxa
+                            String nome;
+                            System.out.printf("Nome do cao: ");
+                            nome = ler.next();
+                            Animais a1 = new Animais();
+                            for (int i=0; i < animais.size(); i++)
+                                if (a1.comparaNome(animais.get(i).getNome(),animais)) {
+                                    System.out.println(animais.toString());
+                                }
                             break;
                         }
                         case 3:{
@@ -67,7 +74,17 @@ public class Main {
                     opt = ler.nextInt();
                     switch (opt){
                         case 1:{
-                            //falta semelhanteeeeeee
+                            String nome;
+                            System.out.printf("Nome Semelhante: ");
+                            nome = ler.next();
+                            Animais a1 = new Animais();
+                            for (int i=0; i < animais.size(); i++){
+                                if (a1.comparaNome(animais.get(i).getNome(), animais)){
+                                    animais.remove(i);
+                                    System.out.println("*** Nome semelhante Removido com Sucesso ***");
+                                }
+                            }
+                            break;
                         }
                         case 2:{
                         String nome;

@@ -74,7 +74,7 @@ public class Animais {
        /* comparaIgual(getNome(), a);*/
         System.out.printf("Raça: ");
         this.setRaca(ler.next());
-        System.out.printf("Sexo: ");
+        System.out.printf("Sexo (M/F): ");
         this.setSexo(ler.next());
         System.out.printf("Pedigree: ");
         this.setPedigree(ler.next());
@@ -117,7 +117,22 @@ public class Animais {
         }
         return false;
     }
+    public boolean comparaNome(String nome, ArrayList<Animais> animais) {
+        if (nome.length() < 5) {
+            System.out.println("Numero de caracteres insuficiente");
+            return false;
+        } else {
+            for (int i=0; i < this.cont; i++){
+                if (nome.substring(0, 5).equals(animais.get(i).getNome().substring(0, 5))) {
+                    System.out.println("Nome parecido");
+                    return false;
+                }
 
+            }
+            return true;
+
+        }
+    }
     @Override
     public int hashCode() {
         final int prime = 31;
